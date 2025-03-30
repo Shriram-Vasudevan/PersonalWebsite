@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 // Sample projects data - you can replace with your actual projects
 const projects = [
   {
-    title: 'project one',
-    description: 'a powerful tool that helps users accomplish important tasks with ease and efficiency.',
-    image: '/images/project1.png',
-    link: 'https://example.com/project1',
-    technologies: ['react', 'node.js', 'mongodb']
+    title: 'loop',
+    description: 'an intelligent audio journal that helps you understand your thoughts. 500 users in 24 hours.',
+    image: '/images/loop.png',
+    link: 'https://apps.apple.com/us/app/loop-voice-journal/id6738974660',
+    technologies: ['swiftui', 'uikit', 'coredata']
   },
   {
     title: 'project two',
