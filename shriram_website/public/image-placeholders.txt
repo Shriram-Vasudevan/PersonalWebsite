@@ -1,0 +1,9 @@
+Place the following images in this folder:
+
+1. profile.jpg - Your profile/headshot (recommended size: 500x500px)
+2. project1.jpg - Image for Project One (recommended size: 1200x800px)
+3. project2.jpg - Image for Project Two (recommended size: 1200x800px)
+3. project3.jpg - Image for Project Three (recommended size: 1200x800px)
+4. project4.jpg - Image for Project Four (recommended size: 1200x800px)
+
+You can use your own images or placeholder images from https://placeholder.com/ or https://picsum.photos/ until you have your actual project screenshots. 

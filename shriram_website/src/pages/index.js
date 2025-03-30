@@ -1,113 +1,102 @@
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Link from "next/link";
+import StatusItem from "../components/StatusItem";
+import { useState, useEffect } from 'react'
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col md:flex-row gap-12 py-16">
+      <div className="w-full md:w-2/3">
+        <h1 className="text-3xl font-mono lowercase mb-2 fadeIn opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+          shriram vasudevan<span className="accent-text">.</span>
+        </h1>
+        
+        <div className="mb-10 fadeIn delay-3 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+          <div className="border-l-2 border-[rgba(255,114,94,0.3)] pl-4 py-1 mb-6">
+            <h2 className="text-sm font-mono lowercase mb-4 accent-text">currently:</h2>
+            
+            <StatusItem icon="💻">
+              building something special in the <Link href="/projects" className="animated-border">edtech</Link> space (details soon)
+            </StatusItem>
+            <StatusItem icon="🦀">
+               marketing{" "}  
+               <a 
+                href="https://apps.apple.com/us/app/loop-voice-journal/id6738974660" 
+                style={{color: "#A28497"}} 
+                className="underline underline-offset-2 hover:opacity-80 transition-opacity"
+                target="_blank"
+                rel="noopener noreferrer">
+                loop
+              </a>, an intelligent audio journal
+            </StatusItem>
+            <StatusItem icon="🎓">
+              learning <span className="accent-text">rust</span> & researching <span className="accent-text-secondary">nlp querying</span>
+            </StatusItem>
+            <StatusItem icon="💼">
+              at{" "}
+              <a
+                href="https://omnicure.com"
+                style={{ color: "#a054e4" }}
+                className="underline underline-offset-2 hover:opacity-80 transition-opacity"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                omnicure
+              </a>
+              , where I work on telemedicine software
+          </StatusItem>
+
+
+          </div>
+          
+          <div className="border-l-2 border-[rgba(98,144,255,0.3)] pl-4 py-1">
+            <h2 className="text-sm font-mono lowercase mb-4 accent-text-secondary">interests:</h2>
+            
+            <StatusItem icon="🚀">
+              mobile apps & web development
+            </StatusItem>
+            <StatusItem icon="🎨">
+              ui/ux design
+            </StatusItem>
+            <StatusItem icon="🤖">
+              ml/ai & computer vision applications
+            </StatusItem>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        <div className="flex gap-4 fadeIn delay-4 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+          <Link 
+            href="/projects"
+            className="px-5 py-2.5 bg-[rgba(255,114,94,0.15)] hover:bg-[rgba(255,114,94,0.25)] text-[rgb(var(--accent-rgb))] text-sm inline-block rounded-md font-mono lowercase transition duration-300 hover-lift"
+          >
+            see my work →
+          </Link>
+          
+          <Link 
+            href="/contact"
+            className="px-5 py-2.5 border border-[rgba(138,138,138,0.3)] hover:border-[rgba(138,138,138,0.5)] text-sm inline-block rounded-md font-mono lowercase transition duration-300 hover-lift"
+          >
+            get in touch
+          </Link>
+        </div>
+      </div>
+      
+      <div className="w-full md:w-1/3 flex justify-center items-start fadeIn delay-2 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+        <div className="relative">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[rgba(255,114,94,0.3)] to-[rgba(98,144,255,0.3)] rounded-full blur opacity-60"></div>
+          <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-[rgba(138,138,138,0.3)]">
+            <div className="w-full h-full flex items-center justify-center bg-[rgba(42,42,42,0.7)]">
+              <span className="text-5xl">👨‍💻</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

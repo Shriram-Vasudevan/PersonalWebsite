@@ -1,26 +1,122 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 245, 245, 245;
+  --background-rgb: 18, 18, 18;
+  --accent-rgb: 255, 114, 94;
+  --accent-secondary-rgb: 98, 144, 255;
+  --gradient-start: rgba(255, 114, 94, 0.08);
+  --gradient-end: rgba(98, 144, 255, 0.08);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-rgb));
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(
+      circle at 90% 10%,
+      var(--gradient-start) 0%,
+      transparent 40%
+    ), 
+    radial-gradient(
+      circle at 10% 90%,
+      var(--gradient-end) 0%,
+      transparent 40%
+    );
+  background-size: 20px 20px, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0, 0 0;
+  background-attachment: fixed;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='rgba(255, 255, 255, 0.35)' /%3E%3C/svg%3E");
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card {
+  border: 1px solid rgba(138, 138, 138, 0.2);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.project-card:hover {
+  border: 1px solid rgba(138, 138, 138, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.accent-text {
+  color: rgb(var(--accent-rgb));
+}
+
+.accent-text-secondary {
+  color: rgb(var(--accent-secondary-rgb));
+}
+
+.animated-border {
+  position: relative;
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(var(--accent-rgb));
+  transition: width 0.3s;
+}
+
+.animated-border:hover::after {
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.hover-lift {
+  transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
 }
