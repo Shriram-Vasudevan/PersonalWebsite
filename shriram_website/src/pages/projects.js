@@ -1,99 +1,100 @@
 import ProjectCard from '../components/ProjectCard'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 // Sample projects data - you can replace with your actual projects
 const projects = [
   {
     title: 'loop',
-    description: 'an intelligent audio journal that helps you understand your thoughts. 500 users in 24 hours.',
+    description: 'a personalized journal where you make short, focused entries using your voice. 500+ users in 24 hours.',
     image: '/images/loop.png',
     link: 'https://apps.apple.com/us/app/loop-voice-journal/id6738974660',
-    technologies: ['swiftui', 'uikit', 'coredata']
+    technologies: ['SwiftUI', 'Python', 'CoreData', 'CoreML']
   },
   {
-    title: 'project two',
-    description: 'an innovative solution that transforms how teams collaborate and share information.',
-    image: '/images/project2.png',
-    link: 'https://example.com/project2',
-    technologies: ['next.js', 'typescript', 'tailwind']
+    title: 'Level Up Fitness',
+    description: 'unlock your true potential with Level Up Fitness, the premier fitness app that revolutionizes the way you train.',
+    image: '/images/loop.png',
+    link: 'https://apps.apple.com/us/app/level-up-fitness-get-moving/id6711331456?platform=iphone',
+    technologies: ['SwiftUI', 'AWS', 'Python']
   },
   {
-    title: 'project three',
-    description: 'a sleek interface for visualizing complex data in a simple and intuitive way.',
-    image: '/images/project3.png',
-    link: 'https://example.com/project3',
-    technologies: ['python', 'flask', 'postgresql']
+    title: 'Jersey Journeys',
+    description: 'get personalized recommendations and guides for your next adventure in New Jersey.',
+    image: '/images/loop.png',
+    link: 'https://apps.apple.com/us/app/jersey-journeys/id6480574525',
+    technologies: ['SwiftUI', 'UIKit', 'Firebase']
   },
   {
-    title: 'project four',
-    description: 'an experimental prototype exploring new interaction models for mobile devices.',
-    image: '/images/project4.png',
+    title: 'ArtXChange',
+    description: 'an experimental prototype exploring new interaction models for mobile devices. featured on product hunt.',
+    image: '/images/loop.png',
     link: 'https://example.com/project4',
-    technologies: ['swift', 'arkit', 'core ml']
+    technologies: ['Unity', 'ARKit', 'AWS']
   }
 ]
 
 export default function Projects() {
   const [mounted, setMounted] = useState(false)
-  const [activeFilter, setActiveFilter] = useState('all')
+  const [searchQuery, setSearchQuery] = useState('')
   
   useEffect(() => {
     setMounted(true)
+    const raf = requestAnimationFrame(() => {
+      document.querySelectorAll('.fadeIn').forEach(el => {
+        el.style.opacity = '1';
+      });
+    });
+    return () => cancelAnimationFrame(raf);
   }, [])
   
-  // Filter categories
-  const allTechnologies = ['all', 'react', 'next.js', 'python', 'swift']
+  const handleSearchChange = useCallback((e) => {
+    setSearchQuery(e.target.value);
+  }, []);
   
-  // Filtered projects
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.technologies.includes(activeFilter))
+  const filteredProjects = projects.filter(project => {
+    const passesSearchFilter = !searchQuery || 
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.technologies.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()))
+    
+    return passesSearchFilter
+  })
 
   return (
-    <div className="py-16">
-      <div className="flex justify-between items-end mb-8">
-        <h1 className="text-3xl font-mono lowercase fadeIn opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-          projects<span className="accent-text">.</span>
-        </h1>
-        
-        <div className="relative hidden md:block">
-          <div className="absolute top-0 right-0 -mt-10 -mr-10">
-            <div className="text-6xl rotate-12 opacity-5">✨</div>
+    <div className="py-10 max-w-xl mx-auto px-4">
+      <div className="flex flex-col justify-between items-start mb-8">
+        <div>
+          <h1 className="text-3xl font-mono lowercase fadeIn" style={{ transitionDelay: '0ms' }}>
+            projects<span className="text-[rgb(var(--accent-rgb))]">.</span>
+          </h1>
+          
+          <p className="text-base mt-3 text-[#a0a0a0] max-w-xl fadeIn" style={{ transitionDelay: '100ms' }}>
+            a collection of things i've built
+          </p>
+        </div>
+
+        <div className="mt-6 fadeIn relative w-full" style={{ transitionDelay: '200ms' }}>
+          <div className="relative">
+            <input 
+              type="text" 
+              placeholder="search projects" 
+              className="px-3 py-1.5 pl-8 bg-[rgba(28,28,28,0.8)] border border-[rgba(255,255,255,0.08)] rounded-md text-xs w-full focus:outline-none focus:border-[rgba(255,114,94,0.3)]"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-2.5 top-2 h-3.5 w-3.5 text-[#a0a0a0]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
           </div>
         </div>
       </div>
       
-      <p className="text-lg mb-8 text-accent max-w-2xl fadeIn delay-1 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-        a collection of things i've built, from small experiments to larger applications.
-      </p>
-      
-      <div className="mb-8 fadeIn delay-2 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-        <div className="flex flex-wrap gap-2">
-          {allTechnologies.map((tech, index) => (
-            <button
-              key={index}
-              className={`px-3 py-1.5 text-xs font-mono lowercase rounded-md transition-all duration-300 ${
-                activeFilter === tech
-                  ? 'bg-[rgba(255,114,94,0.15)] text-[rgb(var(--accent-rgb))]'
-                  : 'bg-[rgba(42,42,42,0.3)] hover:bg-[rgba(42,42,42,0.5)]'
-              }`}
-              onClick={() => setActiveFilter(tech)}
-            >
-              {tech}
-            </button>
-          ))}
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="space-y-6">
         {filteredProjects.map((project, index) => (
           <div 
             key={index} 
-            className="opacity-0 fadeIn" 
-            style={{ 
-              opacity: mounted ? 1 : 0,
-              animationDelay: `${0.3 + index * 0.1}s`
-            }}
+            className="fadeIn" 
+            style={{ transitionDelay: `${300 + index * 50}ms` }}
           >
             <ProjectCard 
               title={project.title}
@@ -107,8 +108,8 @@ export default function Projects() {
       </div>
       
       {filteredProjects.length === 0 && (
-        <div className="text-center py-16 text-accent">
-          No projects match the selected filter.
+        <div className="text-center py-12 text-accent">
+          No projects match the search query.
         </div>
       )}
     </div>

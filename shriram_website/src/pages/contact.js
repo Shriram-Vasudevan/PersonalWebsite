@@ -32,16 +32,16 @@ export default function Contact() {
             <div className="group hover-lift p-4 rounded-lg border border-[rgba(138,138,138,0.1)] bg-[rgba(42,42,42,0.2)] transition-colors hover:bg-[rgba(42,42,42,0.3)]">
               <p className="text-sm text-accent mb-2 font-mono">email:</p>
               <a 
-                href="mailto:hello@shriramvasudevan.com" 
+                href="mailto:shrirammvasudevan@gmail.com" 
                 className="font-mono lowercase text-lg hover:text-[rgb(var(--accent-rgb))] transition-colors"
               >
-                hello@shriramvasudevan.com
+                shrirammvasudevan@gmail.com
               </a>
             </div>
             
             <div className="p-4 rounded-lg border border-[rgba(138,138,138,0.1)] bg-[rgba(42,42,42,0.2)] hover-lift hover:bg-[rgba(42,42,42,0.3)] transition-colors">
               <p className="text-sm text-accent mb-2 font-mono">location:</p>
-              <p className="font-mono lowercase text-lg">san francisco, ca</p>
+              <p className="font-mono lowercase text-lg">morristown, nj</p>
             </div>
           </div>
         </div>
@@ -56,12 +56,12 @@ export default function Contact() {
             <div className="group hover-lift">
               <p className="text-sm text-accent mb-1 font-mono">github:</p>
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/Shriram-Vasudevan" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="font-mono lowercase inline-flex items-center animated-border"
               >
-                github.com/yourusername
+                shriram-vasudevan
                 <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[rgb(var(--accent-rgb))]">↗</span>
               </a>
             </div>
@@ -69,25 +69,25 @@ export default function Contact() {
             <div className="group hover-lift">
               <p className="text-sm text-accent mb-1 font-mono">linkedin:</p>
               <a 
-                href="https://linkedin.com/in/yourusername" 
+                href="https://www.linkedin.com/in/shriram-vasudevan-394671225/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="font-mono lowercase inline-flex items-center animated-border"
               >
-                linkedin.com/in/yourusername
+                shriram-vasudevan
                 <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[rgb(var(--accent-secondary-rgb))]">↗</span>
               </a>
             </div>
             
             <div className="group hover-lift">
-              <p className="text-sm text-accent mb-1 font-mono">twitter:</p>
+              <p className="text-sm text-accent mb-1 font-mono">X:</p>
               <a 
-                href="https://twitter.com/yourusername" 
+                href="https://x.com/shriram_clf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="font-mono lowercase inline-flex items-center animated-border"
               >
-                twitter.com/yourusername
+                @shriram-clf
                 <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[rgb(var(--accent-rgb))]">↗</span>
               </a>
             </div>

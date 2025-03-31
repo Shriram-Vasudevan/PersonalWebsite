@@ -91,9 +91,13 @@ export default function Home() {
         <div className="relative">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-[rgba(255,114,94,0.3)] to-[rgba(98,144,255,0.3)] rounded-full blur opacity-60"></div>
           <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-[rgba(138,138,138,0.3)]">
-            <div className="w-full h-full flex items-center justify-center bg-[rgba(42,42,42,0.7)]">
-              <span className="text-5xl">👨‍💻</span>
-            </div>
+            <Image
+              src="/images/pfp.png" 
+              alt="Shriram Vasudevan"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </div>
