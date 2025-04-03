@@ -1,7 +1,6 @@
 import ProjectCard from '../components/ProjectCard'
 import { useState, useEffect, useCallback } from 'react'
 
-// Sample projects data - you can replace with your actual projects
 const projects = [
   {
     title: 'loop',
@@ -13,22 +12,22 @@ const projects = [
   {
     title: 'Level Up Fitness',
     description: 'unlock your true potential with Level Up Fitness, the premier fitness app that revolutionizes the way you train.',
-    image: '/images/loop.png',
+    image: '/images/LevelUpFitness.jpeg',
     link: 'https://apps.apple.com/us/app/level-up-fitness-get-moving/id6711331456?platform=iphone',
     technologies: ['SwiftUI', 'AWS', 'Python']
   },
   {
     title: 'Jersey Journeys',
     description: 'get personalized recommendations and guides for your next adventure in New Jersey.',
-    image: '/images/loop.png',
+    image: '/images/JerseyJourneys.png',
     link: 'https://apps.apple.com/us/app/jersey-journeys/id6480574525',
     technologies: ['SwiftUI', 'UIKit', 'Firebase']
   },
   {
     title: 'ArtXChange',
-    description: 'an experimental prototype exploring new interaction models for mobile devices. featured on product hunt.',
-    image: '/images/loop.png',
-    link: 'https://example.com/project4',
+    description: 'online marketplace for buying and selling art using Augmented Reality.',
+    image: '/images/ArtXChange.png',
+    link: 'https://apps.apple.com/us/app/artxchange/id1553190024',
     technologies: ['Unity', 'ARKit', 'AWS']
   }
 ]

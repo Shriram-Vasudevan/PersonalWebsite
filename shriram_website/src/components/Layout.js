@@ -57,7 +57,7 @@ export default function Layout({ children, title = 'shriram vasudevan' }) {
           
           <div className="flex items-center space-x-6">
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/Shriram-Vasudevan" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-accent hover:text-[rgb(var(--accent-rgb))] transition-colors duration-300 hover-lift"
@@ -68,7 +68,7 @@ export default function Layout({ children, title = 'shriram vasudevan' }) {
               </svg>
             </a>
             <a 
-              href="https://linkedin.com/in/yourusername" 
+              href="https://www.linkedin.com/in/shriram-vasudevan-394671225/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-accent hover:text-[rgb(var(--accent-secondary-rgb))] transition-colors duration-300 hover-lift"
@@ -81,7 +81,7 @@ export default function Layout({ children, title = 'shriram vasudevan' }) {
               </svg>
             </a>
             <a 
-              href="https://twitter.com/yourusername" 
+              href="https://x.com/shriram_clf" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-accent hover:text-[rgb(var(--accent-rgb))] transition-colors duration-300 hover-lift"
