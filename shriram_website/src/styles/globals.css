@@ -13,7 +13,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
-  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  font-family: var(--font-roboto-mono), 'Roboto Mono', monospace;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 
 a {
@@ -30,6 +32,10 @@ a {
   border: 1px solid rgba(138, 138, 138, 0.5);
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  border-radius: 0 !important;
 }
 
 .accent-text {

@@ -8,57 +8,57 @@ export default function Contact() {
   }, [])
 
   return (
-    <div className="py-16 md:py-24">
-      <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-tight fadeIn opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+    <div className="py-16 md:py-24 max-w-3xl">
+      <h1 className="text-3xl md:text-4xl font-light mb-6 tracking-tight fadeIn opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
         let's talk
       </h1>
 
-      <p className="text-base md:text-lg leading-relaxed opacity-70 mb-12 max-w-2xl fadeIn delay-1 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-        I'm always open to discussing new projects, opportunities, or just connecting.
+      <p className="text-sm md:text-base leading-relaxed opacity-60 mb-12 fadeIn delay-1 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+        open to discussing new projects, opportunities, or just connecting.
       </p>
 
-      <div className="space-y-8 max-w-xl fadeIn delay-2 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+      <div className="space-y-8 fadeIn delay-2 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
         <div>
-          <p className="text-sm opacity-50 mb-2">email</p>
+          <p className="text-xs opacity-40 mb-2 uppercase tracking-wider">email</p>
           <a
             href="mailto:shrirammvasudevan@gmail.com"
-            className="text-lg opacity-80 hover:opacity-100 transition-opacity animated-border"
+            className="text-base opacity-70 hover:opacity-100 transition-opacity"
           >
             shrirammvasudevan@gmail.com
           </a>
         </div>
 
         <div>
-          <p className="text-sm opacity-50 mb-3">connect</p>
-          <div className="flex flex-col space-y-2">
+          <p className="text-xs opacity-40 mb-3 uppercase tracking-wider">connect</p>
+          <div className="flex flex-col space-y-2.5">
             <a
               href="https://github.com/Shriram-Vasudevan"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base opacity-70 hover:opacity-100 transition-opacity inline-flex items-center"
+              className="text-sm opacity-60 hover:opacity-100 transition-opacity inline-flex items-center"
             >
               github
-              <span className="ml-2 opacity-50">↗</span>
+              <span className="ml-2 opacity-40">↗</span>
             </a>
 
             <a
               href="https://www.linkedin.com/in/shriram-vasudevan-394671225/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base opacity-70 hover:opacity-100 transition-opacity inline-flex items-center"
+              className="text-sm opacity-60 hover:opacity-100 transition-opacity inline-flex items-center"
             >
               linkedin
-              <span className="ml-2 opacity-50">↗</span>
+              <span className="ml-2 opacity-40">↗</span>
             </a>
 
             <a
               href="https://x.com/shriram_clf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base opacity-70 hover:opacity-100 transition-opacity inline-flex items-center"
+              className="text-sm opacity-60 hover:opacity-100 transition-opacity inline-flex items-center"
             >
               x / twitter
-              <span className="ml-2 opacity-50">↗</span>
+              <span className="ml-2 opacity-40">↗</span>
             </a>
           </div>
         </div>

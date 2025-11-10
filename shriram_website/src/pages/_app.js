@@ -1,21 +1,16 @@
-import { Inter, IBM_Plex_Mono } from "next/font/google"
+import { Roboto_Mono } from "next/font/google"
 import Layout from '../components/Layout'
 import '../styles/globals.css'
 
-const inter = Inter({
-  variable: "--font-geist-sans",
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
-})
-
-const mono = IBM_Plex_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  weight: ['400', '500', '600']
+  weight: ['300', '400', '500']
 })
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={`${inter.variable} ${mono.variable}`}>
+    <div className={robotoMono.variable}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

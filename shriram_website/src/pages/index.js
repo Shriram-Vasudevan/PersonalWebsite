@@ -14,7 +14,6 @@ export default function Home() {
       role: "Meritocracy Fellow / Software Engineer",
       description: [
         "Developing AI Agents infrastructure within Foundry platform to enable automated workflows",
-        "Built new agent-usable Ontology-querying tools",
         "Designing and implementing frontend interfaces to enhance user experience"
       ]
     },
@@ -40,35 +39,38 @@ export default function Home() {
   ]
 
   return (
-    <div className="py-16 md:py-24">
-      {/* Personal Letter Section */}
-      <div className="mb-20 fadeIn opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-        <h1 className="text-4xl md:text-5xl font-light mb-8 tracking-tight">
-          shriram vasudevan
-        </h1>
-
-        <div className="prose prose-lg max-w-none">
-          <p className="text-base md:text-lg leading-relaxed opacity-80 mb-4">
-            I'm a software engineer passionate about building products that make a difference.
-            My work spans AI infrastructure, fintech, healthcare technology, and research.
-          </p>
-
-          <p className="text-base md:text-lg leading-relaxed opacity-80">
-            I believe in creating thoughtful, well-engineered solutions that solve real problems.
-            Whether it's developing AI agent systems at Palantir, building payment infrastructure
-            that processes millions in transactions, or creating critical healthcare tools, I focus
-            on making technology that truly works.
-          </p>
+    <div>
+      {/* Hero Section with Background */}
+      <div className="relative -mx-8 md:-mx-12 mb-16 md:mb-24 overflow-hidden">
+        <div
+          className="px-8 md:px-12 py-32 md:py-40 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072')",
+            backgroundPosition: 'center 40%'
+          }}
+        >
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-tight text-white">
+                building intelligent systems
+              </h1>
+              <p className="text-base md:text-lg leading-relaxed text-white/90">
+                software engineer working on AI infrastructure, payment systems, and healthcare technology
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div className="mt-8">
-          <Link
-            href="/contact"
-            className="inline-flex items-center text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
-          >
-            get in touch →
-          </Link>
-        </div>
+      {/* Brief About */}
+      <div className="mb-20 fadeIn opacity-0 max-w-3xl" style={{ opacity: mounted ? 1 : 0 }}>
+        <p className="text-sm md:text-base leading-relaxed opacity-70 mb-4">
+          I build systems that solve real problems. From AI agent infrastructure at Palantir to payment rails processing millions in transactions at Mural Pay, I focus on creating robust, well-engineered solutions.
+        </p>
+
+        <p className="text-sm md:text-base leading-relaxed opacity-70">
+          Currently working on autonomous systems and exploring the intersection of AI and enterprise software.
+        </p>
       </div>
 
       {/* Experience Timeline */}
