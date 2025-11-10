@@ -3,46 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 245, 245, 245;
-  --background-rgb: 18, 18, 18;
-  --accent-rgb: 255, 114, 94;
-  --accent-secondary-rgb: 98, 144, 255;
-  --gradient-start: rgba(255, 114, 94, 0.08);
-  --gradient-end: rgba(98, 144, 255, 0.08);
+  --foreground-rgb: 30, 30, 30;
+  --background-rgb: 250, 250, 250;
+  --accent-rgb: 70, 70, 70;
+  --accent-secondary-rgb: 140, 140, 140;
+  --timeline-line: 220, 220, 220;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
-  background-image: 
-    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-    radial-gradient(
-      circle at 90% 10%,
-      var(--gradient-start) 0%,
-      transparent 40%
-    ), 
-    radial-gradient(
-      circle at 10% 90%,
-      var(--gradient-end) 0%,
-      transparent 40%
-    );
-  background-size: 20px 20px, 100% 100%, 100% 100%;
-  background-position: 0 0, 0 0, 0 0;
-  background-attachment: fixed;
   font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='rgba(255, 255, 255, 0.35)' /%3E%3C/svg%3E");
-  background-size: 20px 20px;
-  pointer-events: none;
-  z-index: -1;
 }
 
 a {
@@ -69,6 +40,10 @@ a {
   color: rgb(var(--accent-secondary-rgb));
 }
 
+.timeline-line {
+  border-color: rgb(var(--timeline-line));
+}
+
 .animated-border {
   position: relative;
 }
@@ -89,30 +64,30 @@ a {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .fadeIn {
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .delay-1 {
-  animation-delay: 0.1s;
+  animation-delay: 0.05s;
 }
 
 .delay-2 {
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 .delay-3 {
-  animation-delay: 0.3s;
+  animation-delay: 0.15s;
 }
 
 .delay-4 {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
 .hover-lift {

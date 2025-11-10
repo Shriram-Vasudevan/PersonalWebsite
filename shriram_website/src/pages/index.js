@@ -1,104 +1,100 @@
-import Image from "next/image";
 import Link from "next/link";
-import StatusItem from "../components/StatusItem";
 import { useState, useEffect } from 'react'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
-  
+
   useEffect(() => {
     setMounted(true)
   }, [])
 
+  const experiences = [
+    {
+      company: "Palantir Technologies",
+      role: "Meritocracy Fellow / Software Engineer",
+      description: [
+        "Developing AI Agents infrastructure within Foundry platform to enable automated workflows",
+        "Built new agent-usable Ontology-querying tools",
+        "Designing and implementing frontend interfaces to enhance user experience"
+      ]
+    },
+    {
+      company: "Mural Pay",
+      role: "Software Engineer Intern",
+      description: [
+        "Built Chinese payment rails, unlocked $10mm+ in transactions",
+        "Developed new API endpoints for internal services and third-party integrations",
+        "Built AI KYC/AML compliance system and security check services validating $100mm+ in payment volume",
+        "Initiated development of autonomous, agent-powered frontends that evolve based on user behavior"
+      ]
+    },
+    {
+      company: "Omnicure",
+      role: "Software Engineer",
+      description: [
+        "Built WebRTC in-app calling solution within Unity deployed across iOS, Android, and Web platforms",
+        "Implemented in-call AR features for real-time critical care, including digital markers that track body movements with <50 ms latency",
+        "Designed and developed website with 200k+ visits"
+      ]
+    }
+  ]
+
   return (
-    <div className="flex flex-col md:flex-row gap-12 py-16">
-      <div className="w-full md:w-2/3">
-        <h1 className="text-3xl font-mono lowercase mb-2 fadeIn opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-          shriram vasudevan<span className="accent-text">.</span>
+    <div className="py-16 md:py-24">
+      {/* Personal Letter Section */}
+      <div className="mb-20 fadeIn opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+        <h1 className="text-4xl md:text-5xl font-light mb-8 tracking-tight">
+          shriram vasudevan
         </h1>
-        
-        <div className="mb-10 fadeIn delay-3 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-          <div className="border-l-2 border-[rgba(255,114,94,0.3)] pl-4 py-1 mb-6">
-            <h2 className="text-sm font-mono lowercase mb-4 accent-text">currently:</h2>
-            
-            <StatusItem icon="💻">
-              building something special in the <Link href="/projects" className="animated-border">edtech</Link> space (details soon)
-            </StatusItem>
-            <StatusItem icon="🦀">
-               marketing{" "}  
-               <a 
-                href="https://apps.apple.com/us/app/loop-voice-journal/id6738974660" 
-                style={{color: "#A28497"}} 
-                className="underline underline-offset-2 hover:opacity-80 transition-opacity"
-                target="_blank"
-                rel="noopener noreferrer">
-                loop
-              </a>, an intelligent audio journal
-            </StatusItem>
-            <StatusItem icon="🎓">
-              learning <span className="accent-text">rust</span> & researching <span className="accent-text-secondary">nlp querying</span>
-            </StatusItem>
-            <StatusItem icon="💼">
-              at{" "}
-              <a
-                href="https://omnicure.com"
-                style={{ color: "#a054e4" }}
-                className="underline underline-offset-2 hover:opacity-80 transition-opacity"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                omnicure
-              </a>
-              , where I work on telemedicine software
-          </StatusItem>
 
+        <div className="prose prose-lg max-w-none">
+          <p className="text-base md:text-lg leading-relaxed opacity-80 mb-4">
+            I'm a software engineer passionate about building products that make a difference.
+            My work spans AI infrastructure, fintech, healthcare technology, and research.
+          </p>
 
-          </div>
-          
-          <div className="border-l-2 border-[rgba(98,144,255,0.3)] pl-4 py-1">
-            <h2 className="text-sm font-mono lowercase mb-4 accent-text-secondary">interests:</h2>
-            
-            <StatusItem icon="🚀">
-              mobile apps & web development
-            </StatusItem>
-            <StatusItem icon="🎨">
-              ui/ux design
-            </StatusItem>
-            <StatusItem icon="🤖">
-              ml/ai & computer vision applications
-            </StatusItem>
-          </div>
+          <p className="text-base md:text-lg leading-relaxed opacity-80">
+            I believe in creating thoughtful, well-engineered solutions that solve real problems.
+            Whether it's developing AI agent systems at Palantir, building payment infrastructure
+            that processes millions in transactions, or creating critical healthcare tools, I focus
+            on making technology that truly works.
+          </p>
         </div>
-        
-        <div className="flex gap-4 fadeIn delay-4 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-          <Link 
-            href="/projects"
-            className="px-5 py-2.5 bg-[rgba(255,114,94,0.15)] hover:bg-[rgba(255,114,94,0.25)] text-[rgb(var(--accent-rgb))] text-sm inline-block rounded-md font-mono lowercase transition duration-300 hover-lift"
-          >
-            see my work →
-          </Link>
-          
-          <Link 
+
+        <div className="mt-8">
+          <Link
             href="/contact"
-            className="px-5 py-2.5 border border-[rgba(138,138,138,0.3)] hover:border-[rgba(138,138,138,0.5)] text-sm inline-block rounded-md font-mono lowercase transition duration-300 hover-lift"
+            className="inline-flex items-center text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
           >
-            get in touch
+            get in touch →
           </Link>
         </div>
       </div>
-      
-      <div className="w-full md:w-1/3 flex justify-center items-start fadeIn delay-2 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-        <div className="relative">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-[rgba(255,114,94,0.3)] to-[rgba(98,144,255,0.3)] rounded-full blur opacity-60"></div>
-          <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-[rgba(138,138,138,0.3)]">
-            <Image
-              src="/images/pfp.png" 
-              alt="Shriram Vasudevan"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+
+      {/* Experience Timeline */}
+      <div className="fadeIn delay-2 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
+        <h2 className="text-2xl font-light mb-12 tracking-tight">experience</h2>
+
+        <div className="space-y-12">
+          {experiences.map((exp, index) => (
+            <div key={index} className="relative pl-8 border-l-2 timeline-line pb-8 last:pb-0">
+              {/* Timeline dot */}
+              <div className="absolute left-[-5px] top-2 w-2 h-2 rounded-full bg-[rgb(var(--accent-rgb))]"></div>
+
+              <div>
+                <h3 className="text-xl font-medium mb-1">{exp.company}</h3>
+                <p className="text-sm opacity-60 mb-4">{exp.role}</p>
+
+                <ul className="space-y-2">
+                  {exp.description.map((item, idx) => (
+                    <li key={idx} className="text-sm opacity-70 leading-relaxed">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
