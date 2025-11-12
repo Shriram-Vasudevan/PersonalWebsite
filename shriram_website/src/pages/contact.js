@@ -10,11 +10,11 @@ export default function Contact() {
   return (
     <div className="py-16 md:py-24 max-w-3xl">
       <h1 className="text-3xl md:text-4xl font-light mb-6 tracking-tight fadeIn opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-        let's talk
+        contact
       </h1>
 
       <p className="text-sm md:text-base leading-relaxed opacity-60 mb-12 fadeIn delay-1 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>
-        open to discussing new projects, opportunities, or just connecting.
+        open to projects, opportunities, or connecting.
       </p>
 
       <div className="space-y-8 fadeIn delay-2 opacity-0" style={{ opacity: mounted ? 1 : 0 }}>

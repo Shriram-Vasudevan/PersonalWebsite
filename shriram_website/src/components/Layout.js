@@ -16,7 +16,7 @@ export default function Layout({ children, title = 'shriram vasudevan' }) {
       <Head>
         <title>{title}</title>
         <meta name="description" content="Shriram Vasudevan's personal website" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/pfp.png" />
       </Head>
       
       <header className="py-4 px-8 md:px-12 border-b border-[rgba(200,200,200,0.3)] sticky top-0 backdrop-blur-sm bg-[rgba(250,250,250,0.95)] z-10">
@@ -38,7 +38,7 @@ export default function Layout({ children, title = 'shriram vasudevan' }) {
             href="/contact"
             className="px-4 py-2 bg-black text-white text-xs hover:bg-[rgba(0,0,0,0.85)] transition-colors"
           >
-            let's talk
+            contact
           </Link>
         </nav>
       </header>

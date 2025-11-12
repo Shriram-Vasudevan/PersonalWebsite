@@ -4,28 +4,28 @@ import { useState, useEffect, useCallback } from 'react'
 const projects = [
   {
     title: 'loop',
-    description: 'a personalized journal where you make short, focused entries using your voice. 500+ users in 24 hours.',
+    description: 'voice journal. 500+ users in 24 hours.',
     image: '/images/loop.png',
     link: 'https://apps.apple.com/us/app/loop-voice-journal/id6738974660',
     technologies: ['SwiftUI', 'Python', 'CoreData', 'CoreML']
   },
   {
     title: 'Level Up Fitness',
-    description: 'unlock your true potential with Level Up Fitness, the premier fitness app that revolutionizes the way you train.',
+    description: 'fitness app with personalized training.',
     image: '/images/LevelUpFitness.jpeg',
     link: 'https://apps.apple.com/us/app/level-up-fitness-get-moving/id6711331456?platform=iphone',
     technologies: ['SwiftUI', 'AWS', 'Python']
   },
   {
     title: 'Jersey Journeys',
-    description: 'get personalized recommendations and guides for your next adventure in New Jersey.',
+    description: 'personalized New Jersey travel guides.',
     image: '/images/JerseyJourneys.png',
     link: 'https://apps.apple.com/us/app/jersey-journeys/id6480574525',
     technologies: ['SwiftUI', 'UIKit', 'Firebase']
   },
   {
     title: 'ArtXChange',
-    description: 'online marketplace for buying and selling art using Augmented Reality.',
+    description: 'AR marketplace for art.',
     image: '/images/ArtXChange.png',
     link: 'https://apps.apple.com/us/app/artxchange/id1553190024',
     technologies: ['Unity', 'ARKit', 'AWS']
@@ -68,7 +68,7 @@ export default function Projects() {
           </h1>
           
           <p className="text-base mt-3 text-[#a0a0a0] max-w-xl fadeIn" style={{ transitionDelay: '100ms' }}>
-            a collection of things i've built
+            things i've built
           </p>
         </div>
 
