@@ -12,14 +12,14 @@ export default function Layout({ children, title = 'shriram vasudevan' }) {
   }, [])
   
   return (
-    <div className="min-h-screen flex flex-col bg-[rgb(var(--background-rgb))]">
+    <div className="min-h-screen flex flex-col relative z-10">
       <Head>
         <title>{title}</title>
         <meta name="description" content="Shriram Vasudevan's personal website" />
         <link rel="icon" href="/images/pfp.png" />
       </Head>
       
-      <header className="py-4 px-8 md:px-12 border-b border-[rgba(200,200,200,0.3)] sticky top-0 backdrop-blur-sm bg-[rgba(250,250,250,0.95)] z-10">
+      <header className="py-4 px-8 md:px-12 border-b border-[rgba(200,200,200,0.3)] sticky top-0 backdrop-blur-sm bg-transparent z-10">
         <nav className="flex justify-between items-center max-w-7xl mx-auto">
           <Link href="/" className="text-base font-normal tracking-tight hover:opacity-70 transition-opacity">
             shriram vasudevan
