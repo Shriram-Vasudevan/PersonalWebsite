@@ -10,16 +10,25 @@ export default function Home() {
 
   const experiences = [
     {
+      company: "Currently",
+      role: "Building",
+      description: [
+        "Exploring ambitious projects"
+      ]
+    },
+    {
       company: "Palantir Technologies",
       role: "Meritocracy Fellow / Software Engineer",
+      period: "2025",
       description: [
-        "AI Agents infrastructure in Foundry",
-        "Frontend development"
+        "Built AI agent infrastructure - frontend interfaces",
+        "Foundry platform development"
       ]
     },
     {
       company: "Mural Pay",
       role: "Software Engineer Intern",
+      period: "2025",
       description: [
         "Chinese payment rails - $10mm+ in transactions",
         "API endpoints for internal/third-party services",
@@ -30,6 +39,7 @@ export default function Home() {
     {
       company: "Omnicure",
       role: "Software Engineer",
+      period: "2024",
       description: [
         "WebRTC calling in Unity - iOS, Android, Web",
         "AR features for critical care - <50ms latency",
@@ -62,7 +72,10 @@ export default function Home() {
 
               <div>
                 <h3 className="text-xl font-medium mb-1">{exp.company}</h3>
-                <p className="text-sm opacity-60 mb-4">{exp.role}</p>
+                <p className="text-sm opacity-60 mb-4">
+                  {exp.role}
+                  {exp.period && <span className="ml-2">· {exp.period}</span>}
+                </p>
 
                 <ul className="space-y-2">
                   {exp.description.map((item, idx) => (
