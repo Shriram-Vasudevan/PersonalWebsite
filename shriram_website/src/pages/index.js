@@ -21,8 +21,8 @@ export default function Home() {
       role: "Meritocracy Fellow / Software Engineer",
       period: "2025",
       description: [
-        "Built AI agent infrastructure - frontend interfaces",
-        "Foundry platform development"
+        "Built agent infrastructure for Foundry",
+        "Worked on frontend interfaces"
       ]
     },
     {
@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <div className="py-12">
       {/* Header */}
-      <div className="mb-16 max-w-3xl">
+      <div className="mb-12 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-light mb-4 tracking-tight">
           shriram vasudevan
         </h1>
