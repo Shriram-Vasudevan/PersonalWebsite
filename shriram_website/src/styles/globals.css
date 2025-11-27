@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 30, 30, 30;
-  --background-rgb: 250, 250, 250;
-  --accent-rgb: 70, 70, 70;
-  --accent-secondary-rgb: 140, 140, 140;
-  --timeline-line: 220, 220, 220;
+  --foreground-rgb: 20, 20, 25;
+  --background-rgb: 252, 252, 253;
+  --accent-rgb: 60, 60, 75;
+  --accent-secondary-rgb: 120, 120, 135;
+  --timeline-line: 200, 200, 210;
 }
 
 body {
@@ -28,11 +28,11 @@ body::before {
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(ellipse 160% 120% at 5% -10%, rgba(205, 205, 210, 1) 0%, transparent 35%),
-    radial-gradient(ellipse 140% 100% at 55% 25%, rgba(218, 218, 220, 0.7) 0%, transparent 40%),
-    radial-gradient(ellipse 130% 95% at 95% 75%, rgba(210, 210, 215, 0.9) 0%, transparent 38%),
-    radial-gradient(ellipse 120% 85% at 25% 95%, rgba(222, 222, 224, 0.6) 0%, transparent 42%),
-    radial-gradient(ellipse 110% 75% at 70% 60%, rgba(215, 215, 217, 0.4) 0%, transparent 45%);
+    radial-gradient(ellipse 180% 140% at 10% -15%, rgba(200, 200, 220, 0.8) 0%, transparent 40%),
+    radial-gradient(ellipse 160% 120% at 60% 20%, rgba(210, 210, 230, 0.6) 0%, transparent 45%),
+    radial-gradient(ellipse 150% 110% at 90% 80%, rgba(195, 195, 215, 0.7) 0%, transparent 42%),
+    radial-gradient(ellipse 140% 100% at 20% 100%, rgba(215, 215, 235, 0.5) 0%, transparent 48%),
+    radial-gradient(ellipse 130% 90% at 75% 55%, rgba(205, 205, 225, 0.4) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -43,14 +43,16 @@ a {
 }
 
 .project-card {
-  border: 1px solid rgba(138, 138, 138, 0.2);
-  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  border: 1px solid rgba(120, 120, 140, 0.25);
+  transition: all 0.35s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .project-card:hover {
-  border: 1px solid rgba(138, 138, 138, 0.5);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(100, 100, 130, 0.6);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(60, 60, 75, 0.15);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 * {
@@ -67,6 +69,10 @@ a {
 
 .timeline-line {
   border-color: rgb(var(--timeline-line));
+}
+
+.timeline-dot {
+  box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.3);
 }
 
 .animated-border {

@@ -56,7 +56,7 @@ export default function Home() {
           shriram vasudevan
         </h1>
         <p className="text-base md:text-lg leading-relaxed opacity-70">
-          software engineer. AI infrastructure, payments, healthcare tech.
+          18, trying discipline.
         </p>
       </div>
 
@@ -68,7 +68,7 @@ export default function Home() {
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-8 border-l-2 timeline-line pb-8 last:pb-0">
               {/* Timeline dot */}
-              <div className="absolute left-[-5px] top-2 w-2 h-2 rounded-full bg-[rgb(var(--accent-rgb))]"></div>
+              <div className="absolute left-[-5px] top-2 w-2 h-2 rounded-full bg-[rgb(var(--accent-rgb))] timeline-dot"></div>
 
               <div>
                 <h3 className="text-xl font-medium mb-1">{exp.company}</h3>
@@ -87,6 +87,24 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Beyond Work */}
+      <div className="fadeIn delay-3 opacity-0 mt-20" style={{ opacity: mounted ? 1 : 0 }}>
+        <h2 className="text-2xl font-light mb-8 tracking-tight">beyond work</h2>
+
+        <div className="relative pl-8 border-l-2 timeline-line">
+          <div className="absolute left-[-5px] top-2 w-2 h-2 rounded-full bg-[rgb(var(--accent-rgb))] timeline-dot"></div>
+
+          <div className="space-y-4">
+            <p className="text-base opacity-70 leading-relaxed">
+              I build mobile apps in my spare time. Cumulatively over 100k downloads across various projects.
+            </p>
+            <p className="text-sm opacity-50">
+              iOS, Android, cross-platform development
+            </p>
+          </div>
         </div>
       </div>
     </div>
