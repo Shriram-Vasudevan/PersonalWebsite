@@ -13,7 +13,7 @@ export default function Home() {
       company: "Currently",
       role: "Building",
       description: [
-        "Exploring ambitious projects"
+        "Working on ambitious projects at startup in stealth"
       ]
     },
     {
