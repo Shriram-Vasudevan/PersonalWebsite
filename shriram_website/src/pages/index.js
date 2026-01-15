@@ -13,7 +13,7 @@ export default function Home() {
       company: "Currently",
       role: "Building",
       description: [
-        "Working on ambitious projects at startup in stealth"
+        "Working on ambitious projects"
       ]
     },
     {
@@ -41,9 +41,9 @@ export default function Home() {
       role: "Software Engineer",
       period: "2024",
       description: [
-        "WebRTC calling in Unity - iOS, Android, Web",
+        "WebRTC calling for government telemedicine use cases - iOS, Android, Web",
         "AR features for critical care - <50ms latency",
-        "Website - 200k+ visits"
+        "Built company website - 200k+ visits"
       ]
     }
   ]
