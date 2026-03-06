@@ -11,10 +11,8 @@ export default function Home() {
   const experiences = [
     {
       company: "Currently",
-      role: "Building",
-      description: [
-        "Working on ambitious projects"
-      ]
+      role: "Building something new — more soon",
+      description: []
     },
     {
       company: "Palantir Technologies",
@@ -22,7 +20,7 @@ export default function Home() {
       period: "2025",
       description: [
         "Built agent infrastructure for Foundry",
-        "Worked on frontend interfaces"
+        "Shipped AI copilot features across core product surfaces"
       ]
     },
     {
